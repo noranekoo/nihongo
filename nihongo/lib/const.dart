@@ -10,10 +10,10 @@ const List<Widget> tabs = [
     text: 'Ngữ pháp',
     icon: Icon(FontAwesomeIcons.gavel),
   ),
-  Tab(
-    text: 'Hán Tự',
-    icon: Icon(FontAwesomeIcons.language),
-  ),
+  // Tab(
+  //   text: 'Hán Tự',
+  //   icon: Icon(FontAwesomeIcons.language),
+  // ),
   Tab(
     text: 'Thông tin',
     icon: Icon(FontAwesomeIcons.info),

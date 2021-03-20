@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nihongo/components/infobox.dart';
 import 'package:nihongo/const.dart';
 
@@ -59,6 +60,22 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: SafeArea(
+            child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            ListTile(
+              leading: Icon(
+                FontAwesomeIcons.language,
+                color: Colors.blue,
+              ),
+              title: Text('Hán Tự'),
+              onTap: () {},
+            ),
+          ],
+        )),
+      ),
       appBar: AppBar(
         title: TabBar(
           controller: _tabcontroller,
@@ -74,9 +91,6 @@ class _HomePageState extends State<HomePage>
             children: Init().createMina(),
           )),
           SingleChildScrollView(child: Column(children: Init().createLevel())),
-          Center(
-            child: Text("Đang cập nhật. Vui lòng quay lại sau."),
-          ),
           Center(
               child: Column(children: [
             Container(
