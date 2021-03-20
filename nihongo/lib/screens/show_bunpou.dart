@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert' as convert;
+
 import 'package:http/http.dart' as http;
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,7 +42,8 @@ class _BunpouScreenState extends State<BunpouScreen> {
     var response = await http.get(
         Uri.https(url, '/api/getGrammar.php', {'lessonid': '${widget.id}'}));
     if (response.statusCode == 200) {
-      //print(response.body);
+      //var body =
+      //response.body.replaceAll(RegExp(r'(\$H\$|\$C\$|\$E\$|\$T\$)'), '\n');
       var data = convert.jsonDecode(response.body);
       for (var i = 0; i < data.length; i++) {
         lsBunpou.add(Bunpou(data[i]['id'], data[i]['name'], data[i]['content'],
@@ -117,7 +119,6 @@ class _BunpouScreenState extends State<BunpouScreen> {
                               Flexible(
                                 child: Text(
                                   data[index].content,
-                                  style: TextStyle(fontSize: 16),
                                 ),
                               ),
                               Container()
