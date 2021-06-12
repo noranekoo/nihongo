@@ -1,2 +1,2 @@
 # nihongo
-Ứng dụng học tiếng Nhật
+日本語の勉強アプリケーション
