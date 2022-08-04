@@ -116,22 +116,26 @@ class _KotobaScreenState extends State<KotobaScreen> {
                         children: [
                           Row(
                             children: [
-                              Text(
+                              Flexible(
+                                  child: Text(
                                 data[index].hiragana,
                                 style:
                                     TextStyle(color: Colors.blue, fontSize: 20),
+                              )),
+                              Flexible(
+                                child: Text(
+                                  '   ' + data[index].kanji,
+                                  style: TextStyle(
+                                      color: Colors.deepPurple, fontSize: 20),
+                                ),
                               ),
-                              Text(
-                                '   ' + data[index].kanji,
-                                style: TextStyle(
-                                    color: Colors.deepPurple, fontSize: 20),
-                              ),
-                              Text(
+                              Flexible(
+                                  child: Text(
                                 '   ' + data[index].cn_mean,
                                 style: TextStyle(
                                     color: Colors.deepOrange, fontSize: 20),
                                 textAlign: TextAlign.left,
-                              )
+                              )),
                             ],
                           ),
                           Row(
